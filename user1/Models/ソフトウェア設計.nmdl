@@ -1,0 +1,1971 @@
+{
+  "Type": "Model",
+  "TopElementId": "eca18578-d258-4a8f-ab4e-36a37de27a40",
+  "SchemaVersion": "11.0",
+  "Entities": [
+    {
+      "Id": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "EntityType": "Lifeline",
+      "MetamodelId": "c776b446-3a5c-4c82-8bd8-773b5095336b",
+      "Metamodel": "ライフライン"
+    },
+    {
+      "Id": "14d97c42-fa31-413b-9b22-f0096454263b",
+      "EntityType": "Entity",
+      "Name": "ボタン種別判定",
+      "MetamodelId": "18f6ae40-cd3f-4492-a57e-6d6a4479b96c",
+      "Metamodel": "関数",
+      "Fields": {
+        "Name": "ボタン種別判定",
+        "Responsibility": "キーコードを判別して各処理を実行する。",
+        "Type": "uchar8",
+        "CalleeName": "DispatchExec"
+      }
+    },
+    {
+      "Id": "1ae3f437-a903-4977-bc78-703a90f8a20b",
+      "EntityType": "InteractionOperand",
+      "Name": "オペランド",
+      "MetamodelId": "f003abc6-3fd5-4ef2-9ea0-8ce7d2192c79_Operand",
+      "Metamodel": "オペランド",
+      "Fields": {
+        "Name": "オペランド",
+        "Guard": "2-8桁目"
+      }
+    },
+    {
+      "Id": "1b64f8a0-014f-41ab-98ca-2966b4db29c1",
+      "EntityType": "Message",
+      "Name": "ボタン押下検出",
+      "MetamodelId": "bafc664a-caee-428e-b896-30123d9e71b6",
+      "Metamodel": "メッセージ",
+      "Fields": {
+        "Name": "ボタン押下検出",
+        "MessageSort": "Sync"
+      }
+    },
+    {
+      "Id": "1e194835-5aeb-4578-9b36-e04792244423",
+      "EntityType": "InteractionOperand",
+      "Name": "オペランド",
+      "MetamodelId": "f003abc6-3fd5-4ef2-9ea0-8ce7d2192c79_Operand",
+      "Metamodel": "オペランド",
+      "Fields": {
+        "Name": "オペランド",
+        "Guard": "数値キー"
+      }
+    },
+    {
+      "Id": "277805c4-a1da-440e-8742-4642625a9e2f",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "299c2f33-a8c1-43dc-bb55-4bd52fdf1319",
+      "EntityType": "Message",
+      "Name": "キーコードをキーバッファへセット",
+      "MetamodelId": "bafc664a-caee-428e-b896-30123d9e71b6",
+      "Metamodel": "メッセージ",
+      "Fields": {
+        "Name": "キーコードをキーバッファへセット",
+        "MessageSort": "Sync"
+      }
+    },
+    {
+      "Id": "29c3f937-cf8e-4211-8069-28224756839f",
+      "EntityType": "Entity",
+      "Name": "キーコード変換",
+      "MetamodelId": "18f6ae40-cd3f-4492-a57e-6d6a4479b96c",
+      "Metamodel": "関数",
+      "Fields": {
+        "Name": "キーコード変換",
+        "Responsibility": "ボタンコードをキーコードに変換出力する。",
+        "Type": "uchar8",
+        "CalleeName": "GetKeyCode"
+      }
+    },
+    {
+      "Id": "29f4d8a9-2ddc-4de0-93cc-492b8bce0404",
+      "EntityType": "Entity",
+      "Name": "ボタン検出",
+      "MetamodelId": "18f6ae40-cd3f-4492-a57e-6d6a4479b96c",
+      "Metamodel": "関数",
+      "Fields": {
+        "Name": "ボタン検出",
+        "Responsibility": "ボタン入力の検出可否を出力する。",
+        "Type": "bool",
+        "CalleeName": "DetectKey"
+      }
+    },
+    {
+      "Id": "2b176400-c4bf-4f5a-a6ad-8616c8d7be18",
+      "EntityType": "Entity",
+      "Name": "キーバッファ",
+      "MetamodelId": "9c1af45e-9c71-407a-94ae-7af06dfb05df",
+      "Metamodel": "共通データ",
+      "Fields": {
+        "Name": "キーバッファ",
+        "Description": "8キー分の一次元配列",
+        "VariableName": "KeyBuff",
+        "Type": "uchar8"
+      }
+    },
+    {
+      "Id": "2ce99207-af7b-4ff7-aabb-fc40c0cb7904",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "2d006bc2-dc00-4b2f-9bc4-0cc72b288df3",
+      "EntityType": "Entity",
+      "Name": "ボタン制御",
+      "MetamodelId": "53286fd2-32f0-4545-a3d7-0cce0b92f102",
+      "Metamodel": "コンポーネント",
+      "Fields": {
+        "Name": "ボタン制御",
+        "Description": "ユーザーが入力したボタン種別を判定してボタン別の処理分別を行う。"
+      }
+    },
+    {
+      "Id": "3027ad80-de25-4cab-a4d2-e55a4f168d28",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "36970b31-03c4-4d7c-94cc-bae2c6ebc992",
+      "EntityType": "CombinedFragment",
+      "Name": "複合フラグメント",
+      "MetamodelId": "83d57805-f764-40c3-872b-843bdc3fc4e5",
+      "Metamodel": "複合フラグメント",
+      "Fields": {
+        "Name": "複合フラグメント",
+        "Operator": "Alt"
+      }
+    },
+    {
+      "Id": "3c45a29e-9dda-4b44-a400-04d16e450434",
+      "EntityType": "Entity",
+      "Name": "表示バッファ",
+      "MetamodelId": "9c1af45e-9c71-407a-94ae-7af06dfb05df",
+      "Metamodel": "共通データ",
+      "Fields": {
+        "Name": "表示バッファ",
+        "Description": "8桁分の一次元配列",
+        "VariableName": "DispBuff",
+        "Type": "uchar8"
+      }
+    },
+    {
+      "Id": "3d70d820-5577-47b9-8877-ae92649b0304",
+      "EntityType": "Message",
+      "Name": "キーバッファ左シフト",
+      "MetamodelId": "bafc664a-caee-428e-b896-30123d9e71b6",
+      "Metamodel": "メッセージ",
+      "Fields": {
+        "Name": "キーバッファ左シフト",
+        "MessageSort": "Sync"
+      }
+    },
+    {
+      "Id": "3d893246-3d65-4451-a0b7-ca58ca2e62a6",
+      "EntityType": "Lifeline",
+      "MetamodelId": "c776b446-3a5c-4c82-8bd8-773b5095336b",
+      "Metamodel": "ライフライン"
+    },
+    {
+      "Id": "3efa9457-6c60-4234-bd05-6b885c22907c",
+      "EntityType": "Entity",
+      "Name": "初期化済フラグ",
+      "MetamodelId": "60996682-b7dc-4ad2-afdb-8a25d14307a5",
+      "Metamodel": "内部データ",
+      "Fields": {
+        "Name": "初期化済フラグ",
+        "Description": "システム初期化済を表す。",
+        "VariableName": "FlagSystemInit",
+        "Type": "void",
+        "InitValue": "false"
+      }
+    },
+    {
+      "Id": "3fb85d91-6236-4913-abf7-ebf40b9046c1",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "449ec320-57a1-4b6a-9848-3cd565ea5f24",
+      "EntityType": "Entity",
+      "Name": "演算制御",
+      "MetamodelId": "53286fd2-32f0-4545-a3d7-0cce0b92f102",
+      "Metamodel": "コンポーネント",
+      "Fields": {
+        "Name": "演算制御",
+        "Description": "四則演算を実行し演算結果出力を行う。"
+      }
+    },
+    {
+      "Id": "57f09381-8ab6-4a82-8e8f-c3d5b6f996da",
+      "EntityType": "Entity",
+      "Name": "記憶制御",
+      "MetamodelId": "53286fd2-32f0-4545-a3d7-0cce0b92f102",
+      "Metamodel": "コンポーネント",
+      "Fields": {
+        "Name": "記憶制御",
+        "Description": "1桁または最大桁の数値の記憶を行う。"
+      }
+    },
+    {
+      "Id": "63a3393f-ab2a-4eb1-88ba-2eada9b6e154",
+      "EntityType": "CombinedFragment",
+      "Name": "複合フラグメント",
+      "MetamodelId": "83d57805-f764-40c3-872b-843bdc3fc4e5",
+      "Metamodel": "複合フラグメント",
+      "Fields": {
+        "Name": "複合フラグメント",
+        "Operator": "Loop"
+      }
+    },
+    {
+      "Id": "63d9c649-47af-4442-86a4-917453a20e31",
+      "EntityType": "InteractionOperand",
+      "Name": "オペランド",
+      "MetamodelId": "f003abc6-3fd5-4ef2-9ea0-8ce7d2192c79_Operand",
+      "Metamodel": "オペランド",
+      "Fields": {
+        "Name": "オペランド",
+        "Guard": "四則演算キー（＋/－/×/÷）"
+      }
+    },
+    {
+      "Id": "6b955516-153e-4978-93cc-b1ea5d97b676",
+      "EntityType": "Entity",
+      "Name": "キーコード出力",
+      "MetamodelId": "26597e60-53ab-4df3-a302-b2e0ea1ad328",
+      "Metamodel": "出力",
+      "Fields": {
+        "Name": "キーコード出力",
+        "Description": "押されたボタンに対応する内部キーコード",
+        "Type": "char8"
+      }
+    },
+    {
+      "Id": "6df73100-a59d-4ab8-b6e3-a664d1accf14",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "6f30894e-bb5b-4d90-8da8-8386df94066d",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "78071244-8b67-4d8d-a3d6-16a2d63b2552",
+      "EntityType": "Entity",
+      "Name": "ソフトウェア設計モデル",
+      "MetamodelId": "eeedd3d0-b1bd-4d78-bd82-549f33035968",
+      "Metamodel": "ソフトウェア設計モデル",
+      "Fields": {
+        "Name": "ソフトウェア設計モデル",
+        "Description": "電卓システムのソフトウェア設計仕様を定義する。"
+      }
+    },
+    {
+      "Id": "878afb29-53e9-48b7-b647-293558f5d53d",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "8a96ae59-bf34-43cd-b352-be86795c9a9c",
+      "EntityType": "Entity",
+      "Name": "キーコード",
+      "MetamodelId": "60996682-b7dc-4ad2-afdb-8a25d14307a5",
+      "Metamodel": "内部データ",
+      "Fields": {
+        "Name": "キーコード",
+        "Description": "現在押されたボタンのキーコード格納用",
+        "VariableName": "KeyCode",
+        "Type": "uchar8",
+        "InitValue": "0X00"
+      }
+    },
+    {
+      "Id": "905f1440-233c-41e7-9a36-8b34917abf30",
+      "EntityType": "InteractionOperand",
+      "Name": "オペランド",
+      "MetamodelId": "f003abc6-3fd5-4ef2-9ea0-8ce7d2192c79_Operand",
+      "Metamodel": "オペランド",
+      "Fields": {
+        "Name": "オペランド",
+        "Guard": "ボタン検出"
+      }
+    },
+    {
+      "Id": "9141c866-f968-4469-a721-957898acaafc",
+      "EntityType": "Frame",
+      "Name": "電卓システム",
+      "MetamodelId": "f80eea90-ad4d-4518-88ff-e0f8fecee0ca",
+      "Metamodel": "フレーム",
+      "Fields": {
+        "Name": "電卓システム"
+      }
+    },
+    {
+      "Id": "966a3683-8e32-4eeb-b6fb-ce474bc4ad4e",
+      "EntityType": "Entity",
+      "Name": "システム初期化",
+      "MetamodelId": "53286fd2-32f0-4545-a3d7-0cce0b92f102",
+      "Metamodel": "コンポーネント",
+      "Fields": {
+        "Name": "システム初期化",
+        "Description": "システムに必要なデバイスおよび変数の初期化を行う。"
+      }
+    },
+    {
+      "Id": "96977408-9741-437a-9369-432c3d91c629",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "96b6ec57-f8e4-4a2f-86f6-8f8551cde932",
+      "EntityType": "Entity",
+      "Name": "システム初期化",
+      "MetamodelId": "18f6ae40-cd3f-4492-a57e-6d6a4479b96c",
+      "Metamodel": "関数",
+      "Fields": {
+        "Name": "システム初期化",
+        "Responsibility": "システムを初期化する。",
+        "Type": "void",
+        "CalleeName": "SystemInit"
+      }
+    },
+    {
+      "Id": "96d763c0-11de-4ada-b12e-3f8f176e7e19",
+      "EntityType": "InteractionOperand",
+      "Name": "オペランド",
+      "MetamodelId": "f003abc6-3fd5-4ef2-9ea0-8ce7d2192c79_Operand",
+      "Metamodel": "オペランド",
+      "Fields": {
+        "Name": "オペランド",
+        "Guard": "１桁目"
+      }
+    },
+    {
+      "Id": "97ed97d7-dfe6-48a7-a923-0e1ba042b3ee",
+      "EntityType": "CombinedFragment",
+      "Name": "複合フラグメント",
+      "MetamodelId": "83d57805-f764-40c3-872b-843bdc3fc4e5",
+      "Metamodel": "複合フラグメント",
+      "Fields": {
+        "Name": "複合フラグメント",
+        "Operator": "Break"
+      }
+    },
+    {
+      "Id": "a591dc3a-20f7-413d-91ac-1cca26574e2d",
+      "EntityType": "Entity",
+      "Name": "表示制御",
+      "MetamodelId": "53286fd2-32f0-4545-a3d7-0cce0b92f102",
+      "Metamodel": "コンポーネント",
+      "Fields": {
+        "Name": "表示制御",
+        "Description": "入力データを表示コードに変換してディスプレイへの表示出力を行う。"
+      }
+    },
+    {
+      "Id": "b935bbd1-b1f5-4c8c-a0b5-25f9b9512115",
+      "EntityType": "Lifeline",
+      "MetamodelId": "c776b446-3a5c-4c82-8bd8-773b5095336b",
+      "Metamodel": "ライフライン"
+    },
+    {
+      "Id": "b9b35be1-3ff2-4f59-99cd-7cae1daa4b2f",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "bf2ac545-736f-40e7-ade0-42caf30d8b87",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "c31b94f5-7f9a-472c-937f-7476d6d31d14",
+      "EntityType": "Lifeline",
+      "MetamodelId": "c776b446-3a5c-4c82-8bd8-773b5095336b",
+      "Metamodel": "ライフライン"
+    },
+    {
+      "Id": "c3ed6155-eae1-467e-a436-8cedc6c836bb",
+      "EntityType": "Lifeline",
+      "MetamodelId": "c776b446-3a5c-4c82-8bd8-773b5095336b",
+      "Metamodel": "ライフライン"
+    },
+    {
+      "Id": "c4b22842-18b4-454e-a306-c5cd6418482c",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "cab41eab-37b5-4204-ab6f-9d0530566a75",
+      "EntityType": "InteractionOperand",
+      "Name": "オペランド",
+      "MetamodelId": "f003abc6-3fd5-4ef2-9ea0-8ce7d2192c79_Operand",
+      "Metamodel": "オペランド",
+      "Fields": {
+        "Name": "オペランド",
+        "Guard": "ボタン未検出"
+      }
+    },
+    {
+      "Id": "cba2efd1-18c8-47d8-8e5b-85906473b0ac",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    },
+    {
+      "Id": "cbca163e-1521-4f5b-86b3-92dbd416695a",
+      "EntityType": "Message",
+      "Name": "キーコード変換",
+      "MetamodelId": "bafc664a-caee-428e-b896-30123d9e71b6",
+      "Metamodel": "メッセージ",
+      "Fields": {
+        "Name": "キーコード変換",
+        "MessageSort": "Sync"
+      }
+    },
+    {
+      "Id": "d4a71684-0b08-4288-967c-f112566866ad",
+      "EntityType": "CombinedFragment",
+      "Name": "複合フラグメント",
+      "MetamodelId": "83d57805-f764-40c3-872b-843bdc3fc4e5",
+      "Metamodel": "複合フラグメント",
+      "Fields": {
+        "Name": "複合フラグメント",
+        "Operator": "Alt"
+      }
+    },
+    {
+      "Id": "d4efd5cf-1731-4319-8218-247f2b83ebcd",
+      "EntityType": "Entity",
+      "Name": "ボタン入力検出",
+      "MetamodelId": "512fadda-368f-421e-a441-25a2e382fdfc",
+      "Metamodel": "入力",
+      "Fields": {
+        "Name": "ボタン入力検出",
+        "Description": "ボタンが押されたことを表す\r\ntrue：押下,false：未押下",
+        "Type": "bool"
+      }
+    },
+    {
+      "Id": "d6bc331f-26f1-4278-8ed6-139e90cfd6dc",
+      "EntityType": "Message",
+      "Name": "電源スィッチON",
+      "MetamodelId": "bafc664a-caee-428e-b896-30123d9e71b6",
+      "Metamodel": "メッセージ",
+      "Fields": {
+        "Name": "電源スィッチON",
+        "MessageSort": "Sync"
+      }
+    },
+    {
+      "Id": "df733a5b-fd9b-407e-a0a6-b148f259f5a3",
+      "EntityType": "Message",
+      "Name": "キーコードをキーバッファへセット",
+      "MetamodelId": "bafc664a-caee-428e-b896-30123d9e71b6",
+      "Metamodel": "メッセージ",
+      "Fields": {
+        "Name": "キーコードをキーバッファへセット",
+        "MessageSort": "Sync"
+      }
+    },
+    {
+      "Id": "e0fd1494-2761-43b8-a556-99a6ce9a80f4",
+      "EntityType": "Message",
+      "Name": "表示バッファの内容をディスプレイへ出力する",
+      "MetamodelId": "bafc664a-caee-428e-b896-30123d9e71b6",
+      "Metamodel": "メッセージ",
+      "Fields": {
+        "Name": "表示バッファの内容をディスプレイへ出力する",
+        "MessageSort": "Sync"
+      }
+    },
+    {
+      "Id": "e9515a08-9a1c-4f23-b0de-fdb51abc3cae",
+      "EntityType": "Lifeline",
+      "MetamodelId": "c776b446-3a5c-4c82-8bd8-773b5095336b",
+      "Metamodel": "ライフライン"
+    },
+    {
+      "Id": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "EntityType": "Interaction",
+      "Name": "シーケンス図",
+      "MetamodelId": "f003abc6-3fd5-4ef2-9ea0-8ce7d2192c79",
+      "Metamodel": "シーケンス図",
+      "Fields": {
+        "Name": "シーケンス図"
+      }
+    },
+    {
+      "Id": "eca18578-d258-4a8f-ab4e-36a37de27a40",
+      "EntityType": "Entity",
+      "Name": "ソフトウェア設計",
+      "MetamodelId": "e5b6dde4-64b1-4d4e-aea9-86a93216fe14",
+      "Metamodel": "ソフトウェア設計",
+      "Fields": {
+        "Name": "ソフトウェア設計"
+      }
+    },
+    {
+      "Id": "fdfbeb03-3fe1-4473-864a-eda1143396fc",
+      "EntityType": "ExecutionSpecification",
+      "Name": "実行仕様",
+      "MetamodelId": "797532cd-ca77-45b2-8f4e-e6c462521736",
+      "Metamodel": "実行仕様",
+      "Fields": {
+        "Name": "実行仕様"
+      }
+    }
+  ],
+  "Relations": [
+    {
+      "Id": "02f1c683-c076-40ff-a9e8-ee4238ec20f2",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_CombinedFragment",
+      "Metamodel": "___Interaction_CombinedFragment",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "36970b31-03c4-4d7c-94cc-bae2c6ebc992",
+      "SourceIndex": 2,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "040cc3d4-be64-44a6-afed-d7faf576b279",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Lifeline",
+      "Metamodel": "___Interaction_Lifeline",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "SourceIndex": 2,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "0be75fc3-a20f-4ec3-a779-2e8bafe6fff1",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_CombinedFragment",
+      "Metamodel": "___Interaction_CombinedFragment",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "63a3393f-ab2a-4eb1-88ba-2eada9b6e154",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "0c378920-97a5-453b-8d3b-0b0dbeb7acf2",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.SendMessage",
+      "Metamodel": "送信メッセージ関連",
+      "SourceId": "cba2efd1-18c8-47d8-8e5b-85906473b0ac",
+      "TargetId": "3d70d820-5577-47b9-8877-ae92649b0304"
+    },
+    {
+      "Id": "10d811cf-0a92-491b-a680-1b12c91ba4be",
+      "RelationType": "Embed",
+      "MetamodelId": "8c43b321-bcf8-4657-a54f-95d2fdca7edb",
+      "Metamodel": "ソフトウェアコンポーネントの所有",
+      "SourceId": "78071244-8b67-4d8d-a3d6-16a2d63b2552",
+      "TargetId": "a591dc3a-20f7-413d-91ac-1cca26574e2d",
+      "SourceIndex": 4,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "12275d0b-928c-4b6c-ab07-4fca04cc77e7",
+      "RelationType": "Embed",
+      "MetamodelId": "c175bfbc-2a5b-4483-ba03-a4936d4fc807",
+      "Metamodel": "共通データの所有",
+      "SourceId": "78071244-8b67-4d8d-a3d6-16a2d63b2552",
+      "TargetId": "2b176400-c4bf-4f5a-a6ad-8616c8d7be18",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "12885678-7aae-4631-91a7-8845266d68f0",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "e9515a08-9a1c-4f23-b0de-fdb51abc3cae",
+      "TargetId": "6df73100-a59d-4ab8-b6e3-a664d1accf14",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "1353782b-a14d-4134-9a48-aed7b3075812",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OperandTargetMessage",
+      "Metamodel": "オペランドメッセージ関連",
+      "SourceId": "cab41eab-37b5-4204-ab6f-9d0530566a75",
+      "TargetId": "cbca163e-1521-4f5b-86b3-92dbd416695a"
+    },
+    {
+      "Id": "1b82d2a2-385f-4aa7-a0be-ec2f42235635",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.ReceiveMessage",
+      "Metamodel": "受信メッセージ関連",
+      "SourceId": "2ce99207-af7b-4ff7-aabb-fc40c0cb7904",
+      "TargetId": "3d70d820-5577-47b9-8877-ae92649b0304"
+    },
+    {
+      "Id": "1f21149f-131b-42a7-8a60-f9df553f4447",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.ReceiveMessage",
+      "Metamodel": "受信メッセージ関連",
+      "SourceId": "b9b35be1-3ff2-4f59-99cd-7cae1daa4b2f",
+      "TargetId": "299c2f33-a8c1-43dc-bb55-4bd52fdf1319"
+    },
+    {
+      "Id": "24b1c9ef-70b5-461c-b1e4-f86137cb81af",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetId": "bf2ac545-736f-40e7-ade0-42caf30d8b87",
+      "SourceIndex": 2,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "251939d2-1762-43c1-a6af-64fb38f95526",
+      "RelationType": "Embed",
+      "MetamodelId": "9af7c8eb-9c61-40d1-aa83-85b9c8e6c55c",
+      "Metamodel": "出力ポートの所有",
+      "SourceId": "2d006bc2-dc00-4b2f-9bc4-0cc72b288df3",
+      "TargetId": "6b955516-153e-4978-93cc-b1ea5d97b676",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "256ac4d5-6053-47c8-a547-891d61999f8e",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "bf2ac545-736f-40e7-ade0-42caf30d8b87",
+      "SourceIndex": 9,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "27e8cb7d-1a4a-4452-a6da-ebeca9f7aefa",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "cba2efd1-18c8-47d8-8e5b-85906473b0ac",
+      "SourceIndex": 4,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "29135e0a-adf5-4a81-ad53-5eed404ce12e",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "3027ad80-de25-4cab-a4d2-e55a4f168d28",
+      "SourceIndex": 11,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "2a743c64-16e2-4d42-960d-3c831e2c7f4e",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Design.___InstanceTypeRelationship",
+      "Metamodel": "___InstanceTypeRelationship",
+      "SourceId": "e9515a08-9a1c-4f23-b0de-fdb51abc3cae",
+      "TargetId": "966a3683-8e32-4eeb-b6fb-ce474bc4ad4e",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "2bf202d9-cb77-4634-b395-d9b18d9b9e79",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Message",
+      "Metamodel": "___Interaction_Message",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "3d70d820-5577-47b9-8877-ae92649b0304",
+      "SourceIndex": 6,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "2dce6acd-1873-4491-a9d3-062b31f2e8ff",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "2ce99207-af7b-4ff7-aabb-fc40c0cb7904",
+      "SourceIndex": 3,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "341358de-f67a-450c-995d-70f215d7c13e",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.SendMessage",
+      "Metamodel": "送信メッセージ関連",
+      "SourceId": "3fb85d91-6236-4913-abf7-ebf40b9046c1",
+      "TargetId": "299c2f33-a8c1-43dc-bb55-4bd52fdf1319"
+    },
+    {
+      "Id": "363b313b-f721-46bd-9420-cbe4bcd081c2",
+      "RelationType": "Embed",
+      "MetamodelId": "ad434486-b1dc-407b-a96a-84c1483b01e1",
+      "Metamodel": "入力ポートの所有",
+      "SourceId": "2d006bc2-dc00-4b2f-9bc4-0cc72b288df3",
+      "TargetId": "d4efd5cf-1731-4319-8218-247f2b83ebcd",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "36910c87-c485-4d63-82bd-46510975fd9d",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OperandTargetMessage",
+      "Metamodel": "オペランドメッセージ関連",
+      "SourceId": "1ae3f437-a903-4977-bc78-703a90f8a20b",
+      "TargetId": "3d70d820-5577-47b9-8877-ae92649b0304",
+      "SourceIndex": 1,
+      "TargetIndex": 1
+    },
+    {
+      "Id": "37dffdbf-f13e-44e3-beb9-79582e002b63",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_CombinedFragment",
+      "Metamodel": "___Interaction_CombinedFragment",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "d4a71684-0b08-4288-967c-f112566866ad",
+      "SourceIndex": 3,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "37fe8f3a-8e75-44cd-a81a-353664bdf565",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OperandTargetMessage",
+      "Metamodel": "オペランドメッセージ関連",
+      "SourceId": "1e194835-5aeb-4578-9b36-e04792244423",
+      "TargetId": "299c2f33-a8c1-43dc-bb55-4bd52fdf1319",
+      "SourceIndex": 1,
+      "TargetIndex": 1
+    },
+    {
+      "Id": "39bda9ed-a7f1-473b-8887-885b62b390fc",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.SendMessage",
+      "Metamodel": "送信メッセージ関連",
+      "SourceId": "6f30894e-bb5b-4d90-8da8-8386df94066d",
+      "TargetId": "e0fd1494-2761-43b8-a556-99a6ce9a80f4"
+    },
+    {
+      "Id": "3b1c04a6-ce0b-4004-93dd-e990bcd5b54c",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "c31b94f5-7f9a-472c-937f-7476d6d31d14",
+      "TargetId": "277805c4-a1da-440e-8742-4642625a9e2f",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "3c50528a-2367-4175-ad69-8e3e2c39b975",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "c3ed6155-eae1-467e-a436-8cedc6c836bb",
+      "TargetId": "fdfbeb03-3fe1-4473-864a-eda1143396fc",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "448c4a65-60b2-454f-9101-29b4e5194cbd",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.CrossingFragmentCoveredLifeline",
+      "Metamodel": "横断フラグメントライフライン関連",
+      "SourceId": "d4a71684-0b08-4288-967c-f112566866ad",
+      "TargetId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "4955a0a7-5cdb-41a5-9110-164c2a0e3b9f",
+      "RelationType": "Embed",
+      "MetamodelId": "8c43b321-bcf8-4657-a54f-95d2fdca7edb",
+      "Metamodel": "ソフトウェアコンポーネントの所有",
+      "SourceId": "78071244-8b67-4d8d-a3d6-16a2d63b2552",
+      "TargetId": "449ec320-57a1-4b6a-9848-3cd565ea5f24",
+      "SourceIndex": 3,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "4a03794a-badc-4e2b-8ff5-12800d7ec9ec",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Lifeline",
+      "Metamodel": "___Interaction_Lifeline",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "c3ed6155-eae1-467e-a436-8cedc6c836bb",
+      "SourceIndex": 4,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "4b9d2408-eaea-4ce2-9034-7ffe04d0b188",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___CombinedFragment_InteractionOperand",
+      "Metamodel": "___CombinedFragment_InteractionOperand",
+      "SourceId": "d4a71684-0b08-4288-967c-f112566866ad",
+      "TargetId": "96d763c0-11de-4ada-b12e-3f8f176e7e19",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "4dcfb0d2-1967-47ab-8c07-970c991f477a",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.CrossingFragmentCoveredLifeline",
+      "Metamodel": "横断フラグメントライフライン関連",
+      "SourceId": "36970b31-03c4-4d7c-94cc-bae2c6ebc992",
+      "TargetId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "5020a53a-5777-45c2-a1f9-2bd9ee547d40",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OperandTargetMessage",
+      "Metamodel": "オペランドメッセージ関連",
+      "SourceId": "1e194835-5aeb-4578-9b36-e04792244423",
+      "TargetId": "3d70d820-5577-47b9-8877-ae92649b0304",
+      "SourceIndex": 2
+    },
+    {
+      "Id": "5078bb71-ce1e-436e-b02c-6d866051ed1b",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Lifeline",
+      "Metamodel": "___Interaction_Lifeline",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "b935bbd1-b1f5-4c8c-a0b5-25f9b9512115",
+      "SourceIndex": 5,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "5524bd25-8e44-42f9-90ca-433c6c09f654",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Design.___InstanceTypeRelationship",
+      "Metamodel": "___InstanceTypeRelationship",
+      "SourceId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetId": "2d006bc2-dc00-4b2f-9bc4-0cc72b288df3",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "56440d75-364f-40a4-a4bb-66e2714473d8",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "c4b22842-18b4-454e-a306-c5cd6418482c",
+      "SourceIndex": 10,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "58f03a77-f306-4bdb-b8c1-aa8d9d61c7d5",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___CombinedFragment_InteractionOperand",
+      "Metamodel": "___CombinedFragment_InteractionOperand",
+      "SourceId": "d4a71684-0b08-4288-967c-f112566866ad",
+      "TargetId": "1ae3f437-a903-4977-bc78-703a90f8a20b",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "5a277d6c-8cde-4d88-a093-e0c3f18cc5d0",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OperandTargetMessage",
+      "Metamodel": "オペランドメッセージ関連",
+      "SourceId": "96d763c0-11de-4ada-b12e-3f8f176e7e19",
+      "TargetId": "df733a5b-fd9b-407e-a0a6-b148f259f5a3"
+    },
+    {
+      "Id": "5b9ad35f-9425-41f9-8fda-e381e889628f",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "96977408-9741-437a-9369-432c3d91c629",
+      "SourceIndex": 7,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "5d158460-0ec1-4592-88cb-cc326d734146",
+      "RelationType": "Embed",
+      "MetamodelId": "9322340c-124f-4fb7-921b-32dd0f0bd016",
+      "Metamodel": "関数の所有",
+      "SourceId": "2d006bc2-dc00-4b2f-9bc4-0cc72b288df3",
+      "TargetId": "14d97c42-fa31-413b-9b22-f0096454263b",
+      "SourceIndex": 2,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "65850e44-03c8-45da-b293-ed144246b903",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Message",
+      "Metamodel": "___Interaction_Message",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "df733a5b-fd9b-407e-a0a6-b148f259f5a3",
+      "SourceIndex": 3,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "6aacaf9f-152f-4767-829f-4520ead316fd",
+      "RelationType": "Embed",
+      "MetamodelId": "3f015067-6b52-43cc-b257-6fc75f829af9",
+      "Metamodel": "ソフトウェア構造の所有",
+      "SourceId": "eca18578-d258-4a8f-ab4e-36a37de27a40",
+      "TargetId": "78071244-8b67-4d8d-a3d6-16a2d63b2552",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "6c4028e2-f32a-4b8b-af31-90cf50606543",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.SendMessage",
+      "Metamodel": "送信メッセージ関連",
+      "SourceId": "6df73100-a59d-4ab8-b6e3-a664d1accf14",
+      "TargetId": "1b64f8a0-014f-41ab-98ca-2966b4db29c1"
+    },
+    {
+      "Id": "6ca1d443-7613-4635-b838-3a1f12b5b40d",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetId": "3fb85d91-6236-4913-abf7-ebf40b9046c1",
+      "SourceIndex": 4,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "70f433ed-4600-4ceb-961b-ecdd50425374",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OperandTargetMessage",
+      "Metamodel": "オペランドメッセージ関連",
+      "SourceId": "905f1440-233c-41e7-9a36-8b34917abf30",
+      "TargetId": "cbca163e-1521-4f5b-86b3-92dbd416695a",
+      "TargetIndex": 1
+    },
+    {
+      "Id": "717f11c3-3239-4ac6-83d2-3a47fa96643f",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_CombinedFragment",
+      "Metamodel": "___Interaction_CombinedFragment",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "97ed97d7-dfe6-48a7-a923-0e1ba042b3ee",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "73732cd1-13ea-4142-8c05-70edd2100081",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Lifeline",
+      "Metamodel": "___Interaction_Lifeline",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "3d893246-3d65-4451-a0b7-ca58ca2e62a6",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "78001a96-f832-42e6-bc5c-1ef534e5b3af",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "3d893246-3d65-4451-a0b7-ca58ca2e62a6",
+      "TargetId": "96977408-9741-437a-9369-432c3d91c629",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "7cbe0d76-52c9-4dba-97b3-69297e153b4c",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "c31b94f5-7f9a-472c-937f-7476d6d31d14",
+      "TargetId": "b9b35be1-3ff2-4f59-99cd-7cae1daa4b2f",
+      "SourceIndex": 2,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "801fed7d-f3cc-4266-828a-c654cb532504",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.ReceiveMessage",
+      "Metamodel": "受信メッセージ関連",
+      "SourceId": "3027ad80-de25-4cab-a4d2-e55a4f168d28",
+      "TargetId": "1b64f8a0-014f-41ab-98ca-2966b4db29c1"
+    },
+    {
+      "Id": "81b08dd1-b401-4bc7-aa6f-693134ef2fff",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Design.___InstanceTypeRelationship",
+      "Metamodel": "___InstanceTypeRelationship",
+      "SourceId": "c3ed6155-eae1-467e-a436-8cedc6c836bb",
+      "TargetId": "a591dc3a-20f7-413d-91ac-1cca26574e2d",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "830ebea7-6303-4cce-9a71-c7a7913624f1",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.ReceiveMessage",
+      "Metamodel": "受信メッセージ関連",
+      "SourceId": "fdfbeb03-3fe1-4473-864a-eda1143396fc",
+      "TargetId": "e0fd1494-2761-43b8-a556-99a6ce9a80f4"
+    },
+    {
+      "Id": "853a1f50-ab6a-4659-94ed-b7563a929800",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "3fb85d91-6236-4913-abf7-ebf40b9046c1",
+      "SourceIndex": 6,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "8a311739-a212-4111-8878-822681fd4e9b",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___CombinedFragment_InteractionOperand",
+      "Metamodel": "___CombinedFragment_InteractionOperand",
+      "SourceId": "36970b31-03c4-4d7c-94cc-bae2c6ebc992",
+      "TargetId": "1e194835-5aeb-4578-9b36-e04792244423",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "8b25667c-6367-46fb-8c7b-66331d3ec665",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Design.___InstanceTypeRelationship",
+      "Metamodel": "___InstanceTypeRelationship",
+      "SourceId": "c31b94f5-7f9a-472c-937f-7476d6d31d14",
+      "TargetId": "57f09381-8ab6-4a82-8e8f-c3d5b6f996da",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "8e75dece-ec14-43a4-9b17-180d079ad472",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetId": "cba2efd1-18c8-47d8-8e5b-85906473b0ac",
+      "SourceIndex": 3,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "95ee9763-d8b0-43e3-81c3-45fbf4117362",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.CrossingFragmentCoveredLifeline",
+      "Metamodel": "横断フラグメントライフライン関連",
+      "SourceId": "97ed97d7-dfe6-48a7-a923-0e1ba042b3ee",
+      "TargetId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "962c4a83-df45-4ee3-aa26-a0411233be10",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Message",
+      "Metamodel": "___Interaction_Message",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "d6bc331f-26f1-4278-8ed6-139e90cfd6dc",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "96efde05-bcda-4bb8-8abd-0aaa348c70a5",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OperandTargetMessage",
+      "Metamodel": "オペランドメッセージ関連",
+      "SourceId": "1e194835-5aeb-4578-9b36-e04792244423",
+      "TargetId": "df733a5b-fd9b-407e-a0a6-b148f259f5a3",
+      "TargetIndex": 1
+    },
+    {
+      "Id": "9750d0c6-368d-4483-ad9a-0e53374668bf",
+      "RelationType": "Embed",
+      "MetamodelId": "8c43b321-bcf8-4657-a54f-95d2fdca7edb",
+      "Metamodel": "ソフトウェアコンポーネントの所有",
+      "SourceId": "78071244-8b67-4d8d-a3d6-16a2d63b2552",
+      "TargetId": "966a3683-8e32-4eeb-b6fb-ce474bc4ad4e",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "99352ff9-8189-453d-8333-fb1a33586bfb",
+      "RelationType": "Embed",
+      "MetamodelId": "466b7af6-0c7a-4b72-9e0e-681430285775",
+      "Metamodel": "データの所有",
+      "SourceId": "2d006bc2-dc00-4b2f-9bc4-0cc72b288df3",
+      "TargetId": "8a96ae59-bf34-43cd-b352-be86795c9a9c",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "9b8ff5c4-ebd8-47c5-b755-2ca97628662a",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Design.___InstanceTypeRelationship",
+      "Metamodel": "___InstanceTypeRelationship",
+      "SourceId": "3d893246-3d65-4451-a0b7-ca58ca2e62a6",
+      "TargetId": "99096901-8939-4b04-aa6d-585beddbdc79",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "9c1b2960-b1de-4f49-b5ee-4dab2380d691",
+      "RelationType": "Embed",
+      "MetamodelId": "9322340c-124f-4fb7-921b-32dd0f0bd016",
+      "Metamodel": "関数の所有",
+      "SourceId": "966a3683-8e32-4eeb-b6fb-ce474bc4ad4e",
+      "TargetId": "96b6ec57-f8e4-4a2f-86f6-8f8551cde932",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "a19a942f-e1b8-4d70-bc79-0a6caeabca44",
+      "RelationType": "Embed",
+      "MetamodelId": "8c43b321-bcf8-4657-a54f-95d2fdca7edb",
+      "Metamodel": "ソフトウェアコンポーネントの所有",
+      "SourceId": "78071244-8b67-4d8d-a3d6-16a2d63b2552",
+      "TargetId": "57f09381-8ab6-4a82-8e8f-c3d5b6f996da",
+      "SourceIndex": 2,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "a3f23004-44ed-4b8c-8d2a-c9c76a6a8d33",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetId": "c4b22842-18b4-454e-a306-c5cd6418482c",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "a8e35af7-60fb-4646-9caf-09d1f587c50f",
+      "RelationType": "Embed",
+      "MetamodelId": "466b7af6-0c7a-4b72-9e0e-681430285775",
+      "Metamodel": "データの所有",
+      "SourceId": "966a3683-8e32-4eeb-b6fb-ce474bc4ad4e",
+      "TargetId": "3efa9457-6c60-4234-bd05-6b885c22907c",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "aafc8cd5-29c2-420e-8dd9-f7cabbce576c",
+      "RelationType": "Embed",
+      "MetamodelId": "9322340c-124f-4fb7-921b-32dd0f0bd016",
+      "Metamodel": "関数の所有",
+      "SourceId": "2d006bc2-dc00-4b2f-9bc4-0cc72b288df3",
+      "TargetId": "29c3f937-cf8e-4211-8069-28224756839f",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "ab4313a1-0a3e-4146-ab0b-3c0ab2b15d62",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.SendMessage",
+      "Metamodel": "送信メッセージ関連",
+      "SourceId": "c4b22842-18b4-454e-a306-c5cd6418482c",
+      "TargetId": "cbca163e-1521-4f5b-86b3-92dbd416695a"
+    },
+    {
+      "Id": "af4e9385-86bd-4706-83f5-c5112f191038",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "878afb29-53e9-48b7-b647-293558f5d53d",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "b1c1b48c-f513-4234-810c-97c2022e8669",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Message",
+      "Metamodel": "___Interaction_Message",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "1b64f8a0-014f-41ab-98ca-2966b4db29c1",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "b27d990c-81ac-4196-a92c-2d08edc75e95",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OperandTargetMessage",
+      "Metamodel": "オペランドメッセージ関連",
+      "SourceId": "1ae3f437-a903-4977-bc78-703a90f8a20b",
+      "TargetId": "299c2f33-a8c1-43dc-bb55-4bd52fdf1319"
+    },
+    {
+      "Id": "b5f2f3ac-1e96-4c3c-b659-540e64325fb6",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.ReceiveMessage",
+      "Metamodel": "受信メッセージ関連",
+      "SourceId": "277805c4-a1da-440e-8742-4642625a9e2f",
+      "TargetId": "df733a5b-fd9b-407e-a0a6-b148f259f5a3"
+    },
+    {
+      "Id": "bd7a9f93-9865-41d3-bc9b-67a56febf98f",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "277805c4-a1da-440e-8742-4642625a9e2f",
+      "SourceIndex": 5,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "bf3ca48f-9cf0-450f-9692-395413db6c84",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Message",
+      "Metamodel": "___Interaction_Message",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "cbca163e-1521-4f5b-86b3-92dbd416695a",
+      "SourceIndex": 2,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "c7392350-a19f-40b6-bc6c-888320cf3171",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Message",
+      "Metamodel": "___Interaction_Message",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "e0fd1494-2761-43b8-a556-99a6ce9a80f4",
+      "SourceIndex": 4,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "c9710504-a922-4dfa-8928-f1b51c320b8b",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.ReceiveMessage",
+      "Metamodel": "受信メッセージ関連",
+      "SourceId": "6df73100-a59d-4ab8-b6e3-a664d1accf14",
+      "TargetId": "d6bc331f-26f1-4278-8ed6-139e90cfd6dc"
+    },
+    {
+      "Id": "cea99df9-e2aa-4dbd-a4ae-f4d99a229447",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "b9b35be1-3ff2-4f59-99cd-7cae1daa4b2f",
+      "SourceIndex": 2,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "cf0fd38f-87ee-40b1-9937-ef544c5e5755",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Frame",
+      "Metamodel": "___Interaction_Frame",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "9141c866-f968-4469-a721-957898acaafc",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "d2333f28-e96a-4dcc-9949-4c526514b1cc",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "6f30894e-bb5b-4d90-8da8-8386df94066d",
+      "SourceIndex": 8,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "d32f3fd1-a16c-422b-a81e-fa3508c6f0fe",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___CombinedFragment_InteractionOperand",
+      "Metamodel": "___CombinedFragment_InteractionOperand",
+      "SourceId": "36970b31-03c4-4d7c-94cc-bae2c6ebc992",
+      "TargetId": "63d9c649-47af-4442-86a4-917453a20e31",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "d3ae6d8b-2063-4c80-a377-c48cd943c9ab",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Message",
+      "Metamodel": "___Interaction_Message",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "299c2f33-a8c1-43dc-bb55-4bd52fdf1319",
+      "SourceIndex": 5,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "d3ec6be5-b7df-46cf-a326-222628ae580b",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___CombinedFragment_InteractionOperand",
+      "Metamodel": "___CombinedFragment_InteractionOperand",
+      "SourceId": "63a3393f-ab2a-4eb1-88ba-2eada9b6e154",
+      "TargetId": "cab41eab-37b5-4204-ab6f-9d0530566a75",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "d66ac21f-ce9a-49d7-87a9-914c53f6b279",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.SendMessage",
+      "Metamodel": "送信メッセージ関連",
+      "SourceId": "bf2ac545-736f-40e7-ade0-42caf30d8b87",
+      "TargetId": "df733a5b-fd9b-407e-a0a6-b148f259f5a3"
+    },
+    {
+      "Id": "d93079b6-74db-47d4-81af-a5f6b838ae7c",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "c31b94f5-7f9a-472c-937f-7476d6d31d14",
+      "TargetId": "2ce99207-af7b-4ff7-aabb-fc40c0cb7904",
+      "SourceIndex": 3,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "d9c66ccd-33c0-4369-afd6-1330fd7cb049",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.ReceiveMessage",
+      "Metamodel": "受信メッセージ関連",
+      "SourceId": "878afb29-53e9-48b7-b647-293558f5d53d",
+      "TargetId": "cbca163e-1521-4f5b-86b3-92dbd416695a"
+    },
+    {
+      "Id": "da6696df-d1bf-4d6b-9f37-d9319b70cafa",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "c31b94f5-7f9a-472c-937f-7476d6d31d14",
+      "TargetId": "878afb29-53e9-48b7-b647-293558f5d53d",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "dd6e59f9-3eb0-4c01-9cee-2cc61dd8bcae",
+      "RelationType": "Embed",
+      "MetamodelId": "72edcd26-e1b0-4dd4-a391-fc1180b7401c",
+      "Metamodel": "シーケンス図の所有",
+      "SourceId": "78071244-8b67-4d8d-a3d6-16a2d63b2552",
+      "TargetId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "de874848-6219-4edb-a7ff-caf401dcf15e",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.SendMessage",
+      "Metamodel": "送信メッセージ関連",
+      "SourceId": "96977408-9741-437a-9369-432c3d91c629",
+      "TargetId": "d6bc331f-26f1-4278-8ed6-139e90cfd6dc"
+    },
+    {
+      "Id": "e515cd89-62bb-45fe-a61a-9eb1a191a3e8",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetId": "6f30894e-bb5b-4d90-8da8-8386df94066d",
+      "SourceIndex": 5,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "e8e88e0f-bebc-40f5-a625-8a2eecd13396",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___CombinedFragment_InteractionOperand",
+      "Metamodel": "___CombinedFragment_InteractionOperand",
+      "SourceId": "97ed97d7-dfe6-48a7-a923-0e1ba042b3ee",
+      "TargetId": "905f1440-233c-41e7-9a36-8b34917abf30",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "ee693f6a-d76d-4b87-a866-9a9b3dcd9343",
+      "RelationType": "Embed",
+      "MetamodelId": "8c43b321-bcf8-4657-a54f-95d2fdca7edb",
+      "Metamodel": "ソフトウェアコンポーネントの所有",
+      "SourceId": "78071244-8b67-4d8d-a3d6-16a2d63b2552",
+      "TargetId": "2d006bc2-dc00-4b2f-9bc4-0cc72b288df3",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "ee8cc36e-976f-4356-b339-f4ca0d2e5d4c",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "fdfbeb03-3fe1-4473-864a-eda1143396fc",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "f04eed02-ae00-4065-bfc8-d4fd5f37732c",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Design.___InstanceTypeRelationship",
+      "Metamodel": "___InstanceTypeRelationship",
+      "SourceId": "b935bbd1-b1f5-4c8c-a0b5-25f9b9512115",
+      "TargetId": "449ec320-57a1-4b6a-9848-3cd565ea5f24",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "f1ab8275-0f4b-4a4f-bdc7-736d7ab253ca",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_ExecutionSpecification",
+      "Metamodel": "___Interaction_ExecutionSpecification",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "6df73100-a59d-4ab8-b6e3-a664d1accf14",
+      "SourceIndex": 12,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "f6fc3267-a87a-4f46-9827-da5442b2b5ee",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Lifeline",
+      "Metamodel": "___Interaction_Lifeline",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "e9515a08-9a1c-4f23-b0de-fdb51abc3cae",
+      "SourceIndex": 1,
+      "TargetIndex": -1
+    },
+    {
+      "Id": "f6fe10e2-88ef-45cc-80b7-624ddde61256",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.CrossingFragmentCoveredLifeline",
+      "Metamodel": "横断フラグメントライフライン関連",
+      "SourceId": "63a3393f-ab2a-4eb1-88ba-2eada9b6e154",
+      "TargetId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "f94dc0e1-f2df-4a37-b4bc-30c01d87e2b0",
+      "RelationType": "Embed",
+      "MetamodelId": "c175bfbc-2a5b-4483-ba03-a4936d4fc807",
+      "Metamodel": "共通データの所有",
+      "SourceId": "78071244-8b67-4d8d-a3d6-16a2d63b2552",
+      "TargetId": "3c45a29e-9dda-4b44-a400-04d16e450434",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "fbc9144a-cc16-4043-a261-aca88e16c145",
+      "RelationType": "Ref",
+      "MetamodelId": "System.Behavior.Interaction.OwnedExecutionSpecification",
+      "Metamodel": "ライフライン実行仕様関連",
+      "SourceId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+      "TargetId": "3027ad80-de25-4cab-a4d2-e55a4f168d28",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "fc09ae37-10c5-47e0-8ccc-3f5d2ae5bdb6",
+      "RelationType": "Embed",
+      "MetamodelId": "9322340c-124f-4fb7-921b-32dd0f0bd016",
+      "Metamodel": "関数の所有",
+      "SourceId": "2d006bc2-dc00-4b2f-9bc4-0cc72b288df3",
+      "TargetId": "29f4d8a9-2ddc-4de0-93cc-492b8bce0404",
+      "TargetIndex": -1
+    },
+    {
+      "Id": "fcea4d00-3f93-4ce0-bfec-1732441e72d6",
+      "RelationType": "Embed",
+      "MetamodelId": "System.Behavior.Interaction.___Interaction_Lifeline",
+      "Metamodel": "___Interaction_Lifeline",
+      "SourceId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "TargetId": "c31b94f5-7f9a-472c-937f-7476d6d31d14",
+      "SourceIndex": 3,
+      "TargetIndex": -1
+    }
+  ],
+  "Editors": [
+    {
+      "Id": "bde7c6c1-6d5c-4db8-94f9-a06d55f9d12c",
+      "ViewType": "SequenceDiagram",
+      "MetamodelId": "DensoCreate.Indio.IMF.Extensions.Sequence.ViewInstance.SequenceDiagramViewInstance",
+      "DefinitionId": "dce3e5c6-db05-4794-bbe7-2a9b7b441a70",
+      "ModelId": "ec720524-bfc6-47a7-8381-878c4f976386",
+      "Frame": {
+        "Id": "bb805bdd-7659-407e-b54b-dbd341abcdf9",
+        "ModelId": "9141c866-f968-4469-a721-957898acaafc",
+        "Width": 0,
+        "Height": 0,
+        "Style": {
+          "ViewElementType": "NodeShapeStyle",
+          "UseTheme": false,
+          "Figure": "embed://basic/rectangle"
+        }
+      },
+      "Lifelines": [
+        {
+          "Id": "aafdff7b-afdf-4f41-b0ae-99e09190eabe",
+          "ModelId": "3d893246-3d65-4451-a0b7-ca58ca2e62a6",
+          "LeftPadding": 5,
+          "LaneLength": 803,
+          "X": 5,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "449de5c8-0c24-446c-acc5-5a9034dc6a23",
+          "ModelId": "e9515a08-9a1c-4f23-b0de-fdb51abc3cae",
+          "LeftPadding": 5,
+          "LaneLength": 803,
+          "X": 110,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "119bb321-b42c-4a69-a1b9-c879b39f0375",
+          "ModelId": "0f742b3b-d8b6-4fe8-a81b-53fcacd8689f",
+          "LeftPadding": 49,
+          "LaneLength": 803,
+          "X": 259,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "1d423fe0-3519-48ef-8f69-fb0fd7915e81",
+          "ModelId": "c31b94f5-7f9a-472c-937f-7476d6d31d14",
+          "LeftPadding": 55,
+          "LaneLength": 803,
+          "X": 414,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "c69e6f94-ddcb-4342-bc73-0d2ccbf2fb57",
+          "ModelId": "c3ed6155-eae1-467e-a436-8cedc6c836bb",
+          "LeftPadding": 71,
+          "LaneLength": 803,
+          "X": 585,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "28662836-1888-4afc-b725-f1015d8fb75a",
+          "ModelId": "b935bbd1-b1f5-4c8c-a0b5-25f9b9512115",
+          "LeftPadding": 69,
+          "LaneLength": 803,
+          "X": 755,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        }
+      ],
+      "ExecutionSpecifications": [
+        {
+          "Id": "d49207fa-96ca-4da8-9e22-f36190cfe173",
+          "ModelId": "fdfbeb03-3fe1-4473-864a-eda1143396fc",
+          "Length": 20,
+          "X": 635,
+          "Y": 743,
+          "Width": 0,
+          "Height": 20,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "4cc8286b-1407-4428-862d-1ea1c2c3a183",
+          "ModelId": "878afb29-53e9-48b7-b647-293558f5d53d",
+          "Length": 20,
+          "X": 464,
+          "Y": 165,
+          "Width": 0,
+          "Height": 20,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "2c421ac4-3211-44ad-825d-0c3805b7af92",
+          "ModelId": "b9b35be1-3ff2-4f59-99cd-7cae1daa4b2f",
+          "Length": 20,
+          "X": 464,
+          "Y": 492,
+          "Width": 0,
+          "Height": 20,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "db2d263b-7c28-4f25-9ec9-4c8dc2d6c2bf",
+          "ModelId": "2ce99207-af7b-4ff7-aabb-fc40c0cb7904",
+          "Length": 20,
+          "X": 464,
+          "Y": 430,
+          "Width": 0,
+          "Height": 20,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "d36852c5-b120-4b90-9926-a688be0bb6fb",
+          "ModelId": "cba2efd1-18c8-47d8-8e5b-85906473b0ac",
+          "Length": 40,
+          "X": 309,
+          "Y": 430,
+          "Width": 0,
+          "Height": 40,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "ce3b7607-07c3-4ab6-b8ac-d58a0a30f8e6",
+          "ModelId": "277805c4-a1da-440e-8742-4642625a9e2f",
+          "Length": 20,
+          "X": 464,
+          "Y": 354,
+          "Width": 0,
+          "Height": 20,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "17444a5a-f677-4412-944c-a0894a83a632",
+          "ModelId": "3fb85d91-6236-4913-abf7-ebf40b9046c1",
+          "Length": 40,
+          "X": 309,
+          "Y": 492,
+          "Width": 0,
+          "Height": 40,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "03e1ef83-5cbe-4a7d-ac65-3864674b3445",
+          "ModelId": "96977408-9741-437a-9369-432c3d91c629",
+          "Length": 82,
+          "X": 55,
+          "Y": 42,
+          "Width": 0,
+          "Height": 82,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "205b0ea6-a843-4292-ab28-389abe8382b9",
+          "ModelId": "6f30894e-bb5b-4d90-8da8-8386df94066d",
+          "Length": 40,
+          "X": 309,
+          "Y": 743,
+          "Width": 0,
+          "Height": 40,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "ea5c5835-4814-4714-b05a-412d9bb09ea7",
+          "ModelId": "bf2ac545-736f-40e7-ade0-42caf30d8b87",
+          "Length": 40,
+          "X": 309,
+          "Y": 354,
+          "Width": 0,
+          "Height": 40,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "41a5b4ea-f510-409d-9f67-5dc6c375d842",
+          "ModelId": "c4b22842-18b4-454e-a306-c5cd6418482c",
+          "Length": 40,
+          "X": 309,
+          "Y": 165,
+          "Width": 0,
+          "Height": 40,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "d274d5e6-3a62-4f7a-9223-d5e637294fa0",
+          "ModelId": "3027ad80-de25-4cab-a4d2-e55a4f168d28",
+          "Length": 20,
+          "X": 309,
+          "Y": 64,
+          "Width": 0,
+          "Height": 20,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "bb5a32bc-6aad-4b67-b95d-f0489ed7e838",
+          "ModelId": "6df73100-a59d-4ab8-b6e3-a664d1accf14",
+          "Length": 62,
+          "X": 160,
+          "Y": 42,
+          "Width": 0,
+          "Height": 62,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        }
+      ],
+      "Messages": [
+        {
+          "Id": "81ab6c15-44ff-40cd-a038-02c86a06199c",
+          "ModelId": "d6bc331f-26f1-4278-8ed6-139e90cfd6dc",
+          "SourceY": 42,
+          "TargetY": 42,
+          "IsRightAtFrame": false,
+          "SelfloopBendsX": 0,
+          "Style": {
+            "ViewElementType": "ConnectorShapeStyle",
+            "UseTheme": false,
+            "StartPointFigure": "embed://basic/None",
+            "EndPointFigure": "embed://basic/None"
+          }
+        },
+        {
+          "Id": "d69214ea-2bdc-4e15-8ed6-6b29fdf8121f",
+          "ModelId": "1b64f8a0-014f-41ab-98ca-2966b4db29c1",
+          "SourceY": 64,
+          "TargetY": 64,
+          "IsRightAtFrame": false,
+          "SelfloopBendsX": 0,
+          "Style": {
+            "ViewElementType": "ConnectorShapeStyle",
+            "UseTheme": false,
+            "StartPointFigure": "embed://basic/None",
+            "EndPointFigure": "embed://basic/None"
+          }
+        },
+        {
+          "Id": "c6f8463d-ed74-457a-9071-89611e20a058",
+          "ModelId": "cbca163e-1521-4f5b-86b3-92dbd416695a",
+          "SourceY": 165,
+          "TargetY": 165,
+          "IsRightAtFrame": false,
+          "SelfloopBendsX": 0,
+          "Style": {
+            "ViewElementType": "ConnectorShapeStyle",
+            "UseTheme": false,
+            "StartPointFigure": "embed://basic/None",
+            "EndPointFigure": "embed://basic/None"
+          }
+        },
+        {
+          "Id": "e10cdec0-77de-4c42-a9d7-e0037f23f551",
+          "ModelId": "df733a5b-fd9b-407e-a0a6-b148f259f5a3",
+          "SourceY": 354,
+          "TargetY": 354,
+          "IsRightAtFrame": false,
+          "SelfloopBendsX": 0,
+          "Style": {
+            "ViewElementType": "ConnectorShapeStyle",
+            "UseTheme": false,
+            "StartPointFigure": "embed://basic/None",
+            "EndPointFigure": "embed://basic/None"
+          }
+        },
+        {
+          "Id": "3724d441-40ec-4ccb-b72f-22d1d202e17f",
+          "ModelId": "e0fd1494-2761-43b8-a556-99a6ce9a80f4",
+          "SourceY": 743,
+          "TargetY": 743,
+          "IsRightAtFrame": false,
+          "SelfloopBendsX": 0,
+          "Style": {
+            "ViewElementType": "ConnectorShapeStyle",
+            "UseTheme": false,
+            "StartPointFigure": "embed://basic/None",
+            "EndPointFigure": "embed://basic/None"
+          }
+        },
+        {
+          "Id": "6b52a7c4-9b78-48f4-a24a-7712e403610a",
+          "ModelId": "299c2f33-a8c1-43dc-bb55-4bd52fdf1319",
+          "SourceY": 492,
+          "TargetY": 492,
+          "IsRightAtFrame": false,
+          "SelfloopBendsX": 0,
+          "Style": {
+            "ViewElementType": "ConnectorShapeStyle",
+            "UseTheme": false,
+            "StartPointFigure": "embed://basic/None",
+            "EndPointFigure": "embed://basic/None"
+          }
+        },
+        {
+          "Id": "6a005343-df2c-4792-a286-b84fb52d7ed3",
+          "ModelId": "3d70d820-5577-47b9-8877-ae92649b0304",
+          "SourceY": 430,
+          "TargetY": 430,
+          "IsRightAtFrame": false,
+          "SelfloopBendsX": 0,
+          "Style": {
+            "ViewElementType": "ConnectorShapeStyle",
+            "UseTheme": false,
+            "StartPointFigure": "embed://basic/None",
+            "EndPointFigure": "embed://basic/None"
+          }
+        }
+      ],
+      "Fragments": [
+        {
+          "Id": "29192ae7-86b4-427b-a546-ed1323299414",
+          "ModelId": "63a3393f-ab2a-4eb1-88ba-2eada9b6e154",
+          "X": 222,
+          "Y": 90,
+          "Width": 183,
+          "Height": 157,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "ac855a24-95f3-4054-94b5-edae0c87789c",
+          "ModelId": "97ed97d7-dfe6-48a7-a923-0e1ba042b3ee",
+          "X": 235,
+          "Y": 146,
+          "Width": 161,
+          "Height": 85,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "214e63e9-d35f-4c12-ba3a-65437e40f93b",
+          "ModelId": "36970b31-03c4-4d7c-94cc-bae2c6ebc992",
+          "X": 223,
+          "Y": 260,
+          "Width": 180,
+          "Height": 442,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        },
+        {
+          "Id": "e4065788-e069-4c6e-8b80-caec508e45d4",
+          "ModelId": "d4a71684-0b08-4288-967c-f112566866ad",
+          "X": 239,
+          "Y": 322,
+          "Width": 151,
+          "Height": 215,
+          "Style": {
+            "ViewElementType": "NodeShapeStyle",
+            "UseTheme": false,
+            "Figure": "embed://basic/rectangle"
+          }
+        }
+      ],
+      "Operands": [
+        {
+          "Id": "8b5b3362-f9cd-48d7-a536-627d7d74e8ea",
+          "ModelId": "cab41eab-37b5-4204-ab6f-9d0530566a75",
+          "Position": 30
+        },
+        {
+          "Id": "1af77404-917a-4948-b6e7-419636d53210",
+          "ModelId": "905f1440-233c-41e7-9a36-8b34917abf30",
+          "Position": 30
+        },
+        {
+          "Id": "11568e18-5d01-4f37-94f4-c287fbaba826",
+          "ModelId": "1e194835-5aeb-4578-9b36-e04792244423",
+          "Position": 30
+        },
+        {
+          "Id": "0eda159d-899b-4c78-bca4-d6018dd83645",
+          "ModelId": "96d763c0-11de-4ada-b12e-3f8f176e7e19",
+          "Position": 30
+        },
+        {
+          "Id": "c70cddb9-123e-440b-a7ee-4d504d0f38c6",
+          "ModelId": "1ae3f437-a903-4977-bc78-703a90f8a20b",
+          "Position": 83
+        },
+        {
+          "Id": "1929cb70-0dc0-4509-9d06-59629893f4f9",
+          "ModelId": "63d9c649-47af-4442-86a4-917453a20e31",
+          "Position": 296
+        }
+      ]
+    }
+  ]
+}

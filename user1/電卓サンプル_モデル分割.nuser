@@ -1,0 +1,14 @@
+﻿{
+  "LoadSettings": {
+    "Units": [
+      {
+        "FilePath": "Models\\ソフトウェア要求仕様.nmdl",
+        "LoadMode": "manual"
+      },
+      {
+        "FilePath": "Models\\ソフトウェア設計.nmdl",
+        "LoadMode": "manual"
+      }
+    ]
+  }
+}
